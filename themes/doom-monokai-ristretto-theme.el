@@ -1,54 +1,54 @@
-;; doom-monokai-pro-theme.el --- Pro filter of Monokai Pro -*- no-byte-compile: t; -*-
+;; doom-monokai-ristretto-theme.el --- Ristretto filter of Monokai Pro -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
-;;
-(defgroup doom-monokai-pro-theme nil
+;;; Code:
+(defgroup doom-monokai-ristretto-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
 
-(defcustom doom-monokai-pro-brighter-comments nil
+(defcustom doom-monokai-ristretto-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-monokai-pro-theme
+  :group 'doom-monokai-ristretto-theme
   :type 'boolean)
 
-(defcustom doom-monokai-pro-comment-bg doom-monokai-pro-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-monokai-pro-theme
+(defcustom doom-monokai-ristretto-comment-bg doom-monokai-ristretto-brighter-comments
+  "If non-nil, comments will have a subtle, darker background.
+Enhancing their legibility."
+  :group 'doom-monokai-ristretto-theme
   :type 'boolean)
 
-(defcustom doom-monokai-pro-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
-  :group 'doom-monokai-pro-theme
+(defcustom doom-monokai-ristretto-padded-modeline doom-themes-padded-modeline
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
+  :group 'doom-monokai-ristretto-theme
   :type '(choice integer boolean))
 
 ;;
-(def-doom-theme doom-monokai-pro
+(def-doom-theme doom-monokai-ristretto
   "A dark, vibrant theme inspired by Textmate's Monokai."
 
   ;; name        gui       256       16
-  ((bg         '("#2d2a2e" nil       nil            ))
-   (bg-alt     '("#19181a" nil       nil            ))
+  ((bg         '("#2c2525" nil       nil            ))
+   (bg-alt     '("#191515" nil       nil            ))
    (base0      '("#131313" "#121212" "black"        ))
-   (base1      '("#19181a" "#1c1c1c" "black"        ))
-   (base2      '("#333134" "#262626" "brightblack"  ))
-   (base3      '("#403e41" "#3a3a3a" "brightblack"  ))
-   (base4      '("#5b595c" "#585858" "brightblack"  ))
-   (base5      '("#615f62" "#585858" "brightblack"  ))
-   (base6      '("#727072" "#6c6c6c" "brightblack"  ))
-   (base7      '("#939293" "#8a8a8a" "brightblack"  ))
-   (base8      '("#bdbcbc" "#bcbcbc" "white"        ))
-   (fg         '("#fcfcfa" "#ffffff" "brightwhite"  ))
+   (base1      '("#191515" "#1c1c1c" "black"        ))
+   (base2      '("#332c2c" "#262626" "brightblack"  ))
+   (base3      '("#403838" "#3a3a3a" "brightblack"  ))
+   (base4      '("#5b5353" "#585858" "brightblack"  ))
+   (base5      '("#615959" "#585858" "brightblack"  ))
+   (base6      '("#72696a" "#6c6c6c" "brightblack"  ))
+   (base7      '("#948a8b" "#8a8a8a" "brightblack"  ))
+   (base8      '("#bfb3b5" "#bcbcbc" "white"        ))
+   (fg         '("#fff1f3" "#ffffff" "brightwhite"  ))
    (fg-alt     '("#c6c6c6" "#c6c6c6" "white"        ))
 
    (grey       base4)
-   (red        '("#ff6188" "#ff69bf" "red"          ))
-   (orange     '("#fc9867" "#ff7f50" "brightred"    ))
-   (green      '("#a9dc76" "#90ee90" "green"        ))
-   (yellow     '("#ffd866" "#f0e68c" "yellow"       ))
-   (violet     '("#ab9df2" "#9370db" "magenta"      ))
-   (cyan       '("#78dce8" "#40e0d0" "brightcyan"   ))
+   (red        '("#fd6883" "#ff69bf" "red"          ))
+   (orange     '("#f38d70" "#ff7f50" "brightred"    ))
+   (green      '("#adda78" "#90ee90" "green"        ))
+   (yellow     '("#f9cc6c" "#f0e68c" "yellow"       ))
+   (violet     '("#a8a9eb" "#9370db" "magenta"      ))
+   (cyan       '("#85dacc" "#40e0d0" "brightcyan"   ))
    (magenta     cyan)
    (blue        cyan)
    (dark-blue   cyan)
@@ -60,8 +60,8 @@ determine the exact padding."
    (vertical-bar   (doom-lighten bg 0.1))
    (selection      base2)
    (builtin        violet)
-   (comments       (if doom-monokai-pro-brighter-comments violet base6))
-   (doc-comments   (if doom-monokai-pro-brighter-comments (doom-lighten violet 0.1) (doom-lighten base6 0.25)))
+   (comments       (if doom-monokai-ristretto-brighter-comments violet base6))
+   (doc-comments   (if doom-monokai-ristretto-brighter-comments (doom-lighten violet 0.1) (doom-lighten base6 0.25)))
    (constants      violet)
    (functions      green)
    (keywords       magenta)
@@ -82,8 +82,8 @@ determine the exact padding."
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
    (-modeline-pad
-    (when doom-monokai-pro-padded-modeline
-      (if (integerp doom-monokai-pro-padded-modeline) doom-monokai-pro-padded-modeline 4)))
+    (when doom-monokai-ristretto-padded-modeline
+      (if (integerp doom-monokai-ristretto-padded-modeline) doom-monokai-ristretto-padded-modeline 4)))
 
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
@@ -319,6 +319,16 @@ determine the exact padding."
    (lsp-ui-peek-highlight                       :inherit 'isearch)
    (lsp-ui-peek-filename                        :foreground base8 :bold bold)
 
+   ;; treemacs
+   (treemacs-git-added-face                     :foreground green)
+   (treemacs-git-conflict-face                  :foreground red)
+   (treemacs-git-ignored-face                   :foreground base6)
+   (treemacs-git-modified-face                  :foreground violet)
+   (treemacs-git-renamed-face                   :foreground orange)
+   (treemacs-git-untracked-face                 :inherit 'treemacs-git-renamed-face)
+   (treemacs-on-failure-pulse-face              :foreground base0 :background red)
+   (treemacs-on-success-pulse-face              :foreground base0 :background green)
+
    ;;; web-mode
    ;;; html
    (web-mode-html-tag-face                      :foreground red)
@@ -336,5 +346,4 @@ determine the exact padding."
   ;; ()
   )
 
-(provide 'doom-monokai-pro-theme)
-;;; doom-monokai-pro-theme.el ends here
+;;; doom-monokai-ristretto-theme.el ends here
