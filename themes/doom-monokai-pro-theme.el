@@ -49,7 +49,7 @@ determine the exact padding."
    (yellow     '("#ffd866" "#f0e68c" "yellow"       ))
    (violet     '("#ab9df2" "#9370db" "magenta"      ))
    (cyan       '("#78dce8" "#40e0d0" "brightcyan"   ))
-   (magenta     cyan)
+   (magenta     red)
    (blue        cyan)
    (dark-blue   cyan)
    (teal        cyan)
